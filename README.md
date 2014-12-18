@@ -27,7 +27,7 @@ Create a program that prints different cell values representing cells in a sprea
 - Fields: none
 - Constructors:
   - Default (no parameters)
-  - Second: takes one parameter and assigns it to value (HINT: use setValue()
+  - Second: takes one parameter and assigns it to value - HINT: use setValue()
 - Accessors:
   - value()
 - Mutators:
@@ -38,7 +38,7 @@ Create a program that prints different cell values representing cells in a sprea
   - dateFormat (HINT: DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 - Constructors:
   - Default (no parameters)
-  - Second: takes one parameter and assigns it to value (HINT: use setValue()
+  - Second: takes one parameter and assigns it to value - HINT: use setValue()
 - Accessors:
   - value(): returns the wage of the employee
 - Mutators:
@@ -49,7 +49,7 @@ Create a program that prints different cell values representing cells in a sprea
 - Fields: none
 - Constructors:
   - Default (no parameters)
-  - Second: takes one parameter and assigns it to value (HINT: use setValue()
+  - Second: takes one parameter and assigns it to value - HINT: use setValue()
 - Accessors:
   - value()
 - Mutators:

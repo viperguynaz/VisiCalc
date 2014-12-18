@@ -11,7 +11,7 @@ public class CellDate extends Cell {
 		try {
 			date = dateFormat.parse(input);	
 			input = dateFormat.format(date);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			input = "";
 		}
 		super.setValue(input);

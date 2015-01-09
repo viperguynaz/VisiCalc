@@ -1,3 +1,14 @@
+VisiCalc CP2 - Fri 1/9
+==============
+
+## Objectives
+- Understand how to create classes from an abstract class and then use those classes
+
+## Assignment
+- Complete class Spreadsheet
+
+
+
 VisiCalc - Thur 12/18
 ==============
 

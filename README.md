@@ -5,7 +5,7 @@ VisiCalc CP2 - Fri 1/9
 - Understand how to create classes from an abstract class and then use those classes
 
 ## Assignment
-- Complete class Spreadsheet
+- Complete class Spreadsheet - the main program (as written) should produce the following:
 
 ## Output
 ```

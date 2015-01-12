@@ -1,81 +1,33 @@
-public class Spreadsheet {
-// private fields
-  private Cell[][] Ss = new Cell[11][8];
-  private static int rows = 11;
-  private static int cols = 8;
-  private static int columnWidth = 12;
-  private static int asciiOffset = 64;
-  private String border;
-  private String borderRow;
-  
-// private methods
-  private static int getCol(String location) 
-  {
-    return (int)location.charAt(0)-asciiOffset;
-  }
-  private static int getRow(String location)
-  {
-    return Integer.parseInt(location.substring(1));
-  }
-  private static String padOrTruncateDisplayString(Cell cell)
-  {
-// truncate string to length - 1 and display >
-    String s = cell.getDisplayString();
-    if (s.length() > columnWidth) {
-      s = s.substring(0, columnWidth - 1) + ">";
-    }
-// if length is odd pad end to even length
-    if (s.length() % 2 == 1) {
-      s += " ";
-    }
-// justify pad to center in cell
-    while (s.length() < columnWidth) {
-      s = " " + s + " ";
-    }
-    return s;
-  }
-// constructor
-  public Spreadsheet() 
-  {
-    Cell[][] Cells = new Cell[rows][cols];
-    Cells[0][0] = new CellString("");
-    
-    border = "";
-    
-    for (int i = 0; i < columnWidth; i++)
-    {
-      border += "-";
-    
-    }
-    
-    borderRow = border + "+";
-    
-    for (int col = 0; col < cols; col++)
-    {
-      Cells[rows][cols]= new CellString((asciiOffset + col) + "");
-    }
-    
-    for (int row = 1; row < rows; row++)
-    {
-      Cells[row][0] = new CellString(row + "");
-      for (int column = 1; column < cols; column++)
-      {
-        Cells[rows][cols] = new CellString("");
-        borderRow += border + "+";
-      }
-    }
-  }
-// mutators
-  public void setCell(String location, Cell cell) 
-  {
 
-  }
-// accessors
-  public Cell getCell(String location) 
-  {
-    return cell;
-  }
-  public void print() {
-// TODO
+public class VisiCalc {
+  public static void main(String[] args) {
+// create a spreadsheet and print it
+    Spreadsheet sp = new Spreadsheet();
+    sp.print();
+    System.out.println();
+// set some cells and print spreadsheet
+    sp.setCell("A1", new CellString("wow"));
+    sp.setCell("B2", new CellString("quot\"es"));
+    sp.setCell("C3", new CellString("wow this is a long string"));
+    sp.setCell("D4", new CellNumeric("abc")); // handle parse error, should result in empty value
+    sp.setCell("E5", new CellNumeric("105.12"));
+    sp.setCell("F6", new CellNumeric("3.14159265359"));
+    sp.setCell("G7", new CellDate("43")); // handle parse error, should result in empty value
+    sp.setCell("A3", new CellDate("1/1/1990"));
+    sp.setCell("B4", new CellDate("12/25/2014"));
+    System.out.println();
+    sp.print();
+    System.out.println();
+    System.out.println("A1 = " + sp.getCell("A1").getInputValue());
+    System.out.println("B2 = " + sp.getCell("B2").getInputValue());
+    System.out.println("C3 = " + sp.getCell("C3").getInputValue());
+    System.out.println("D4 = " + sp.getCell("D4").getInputValue());
+    System.out.println("E5 = " + sp.getCell("E5").getInputValue());
+    System.out.println("F6 = " + sp.getCell("F6").getInputValue());
+    System.out.println("G7 = " + sp.getCell("G7").getInputValue());
+    System.out.println("A3 = " + sp.getCell("A3").getInputValue());
+    System.out.println("B4 = " + sp.getCell("B4").getInputValue());
+
+
   }
 }

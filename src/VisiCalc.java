@@ -33,5 +33,37 @@ public class VisiCalc {
 		System.out.println("G7 = " + sp.getCell("G7").getInputValue());
 		System.out.println("A3 = " + sp.getCell("A3").getInputValue());
 		System.out.println("B4 = " + sp.getCell("B4").getInputValue());
+		
+		public void setCell(String position, Cell cell)
+ 		 {
+ 		   cells[getRow(position)][getCol(position)]= cell;
+ 		 }
+ 		public Cell getCell(String position)
+ 		 {
+ 		   return cells[getRow(position)][getCol(position)];
+ 		 }
+ 		private int getColumn()
+ 		 {
+ 		   return location.charAt(0)-asciiOffset;+
+                 }
+		private static int getCol(String position)
+                 {
+                   return (int) position.charAt(0) - asciiOffset;
+                 }
+                private static int getRow (String position)
+                 {
+                   return Integer.parseInt(position.substring(1));
+                 }
+                public void print()
+                 {
+                  for (int row = 0; row< rows; row++)
+                {
+                  for(int col = 0; col<cols; col++)
+                {
+                   System.out.print(padOrTruncateDisplayString(cells[row][col])+ "|")
+                 }
+                    System.out.println(borderRow);
+                }
+                }
 	}
 }

@@ -40,7 +40,7 @@ public class Spreadsheet {
     
     border = "";
     
-    for (int i = 0; i < columnWidth; i++)
+    for (int i = 0; i < columnWidth - 1; i++)
     {
       border += "-";
     }
@@ -76,9 +76,9 @@ public class Spreadsheet {
   }
   public void print()
   {
-    for (int row = 0; row < rows; row++)
+    for (int row = 0; row < rows-1; row++)
     {
-      for(int col = 0; col < cols; col++)
+      for(int col = 0; col < cols - 1; col++)
       {
         System.out.print(padOrTruncateDisplayString(Ss[row][col])+ "|");
       }

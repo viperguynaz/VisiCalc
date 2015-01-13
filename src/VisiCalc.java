@@ -27,20 +27,5 @@ public class VisiCalc {
     System.out.println("G7 = " + sp.getCell("G7").getInputValue());
     System.out.println("A3 = " + sp.getCell("A3").getInputValue());
     System.out.println("B4 = " + sp.getCell("B4").getInputValue());
-
-
-    private int getColumn()
-    {
-      return location.charAt(0)-asciiOffset;+
-    }
-    private static int getCol(String position)
-    {
-      return (int) position.charAt(0) - asciiOffset;
-    }
-    private static int getRow (String position)
-    {
-      return Integer.parseInt(position.substring(1));
-    }
-
   }
 }
